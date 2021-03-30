@@ -13,11 +13,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Log.e("Check", "$randomNumber")
+        replayButton.setOnClickListener {
+            replayButton.isGone = true
+            scoreTextView.isGone = false
+            randomNumber = (1..100).random()
+            score = 100
+            updateTextView("${getString(R.string.enterNumber)}")
+            guessTextInputView.setText("")
+            scoreTextView.text = "${getString(R.string.score)} $score"
+            checkButton.isEnabled = true
+            guessTextInputView.isEnabled = true
+        }
+
         checkButton.setOnClickListener {
             val guess = guessTextInputView.text
 
             if (guess.toString().isEmpty()){
-                guessTextInputView.error = "Please enter a number"
+                guessTextInputView.error = "${getString(R.string.enterNumber)}"
             } else {
                 when {
                     guess.toString().toInt() > randomNumber  -> {
@@ -33,18 +46,19 @@ class MainActivity : AppCompatActivity() {
                         scoreTextView.isGone = true
                         guessTextInputView.isEnabled = false
                         checkButton.isEnabled = false
+                        replayButton.isGone = false
                     }
                 }
             }
         }
     }
 
-    fun updateScore(){
+    private fun updateScore(){
         score -= 1
         scoreTextView.text = "${getString(R.string.score)} $score"
     }
 
-    fun updateTextView(text:String){
+    private fun updateTextView(text:String){
         statusTextView.text = "$text"
     }
 

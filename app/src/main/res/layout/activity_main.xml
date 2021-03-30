@@ -86,4 +86,18 @@
         android:gravity="center"
         android:text="@string/score" />
 
+    <Button
+        android:id="@+id/replayButton"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:visibility="gone"
+        app:icon="@drawable/ic_baseline_replay_24"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        tools:visibility="visible" />
+
 </LinearLayout>
