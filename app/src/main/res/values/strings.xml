@@ -2,7 +2,7 @@
     <string name="app_name">GuessGame</string>
     <string name="enterNumber">Please Enter A Number</string>
     <string name="check">CHECK</string>
-    <string name="score">Your Score: </string>
+    <string name="score">Your Score:</string>
     <string name="guess">Guess</string>
     <string name="todo">todo</string>
 </resources>
