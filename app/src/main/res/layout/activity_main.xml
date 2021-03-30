@@ -13,10 +13,11 @@
         tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/appImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <TextView
@@ -41,9 +42,11 @@
         app:passwordToggleEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/guessTextInputView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Guess" />
+            android:hint="@string/guess"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,11 +55,11 @@
             android:layout_height="16dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/checkButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:text="CHECK"
+        android:text="@string/check"
         app:icon="@drawable/ic_baseline_check_24"
         app:iconGravity="end" />
 
@@ -65,11 +68,11 @@
         android:layout_height="16dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/statusTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Please Enter A Number"
+        android:text="@string/enterNumber"
         android:textSize="18sp" />
 
     <Space
@@ -77,10 +80,10 @@
         android:layout_height="16dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/scoreTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Your Score: 100" />
+        android:text="@string/score" />
 
 </LinearLayout>
